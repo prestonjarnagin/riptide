@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello"
+
+  conditions: "Conditions"
+  waves: "Waves"
+  wind: "Wind"
+  time: "Time"
