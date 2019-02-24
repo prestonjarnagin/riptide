@@ -1,5 +1,43 @@
-Riptide
+<header>Riptide</header>
 
-Wind Speed: <%= @facade.wind[:speed] %>
+<body>
+  <header id='location-container'>
+    <h1 id="location-name">Location Name</h1>
+    <h2 id="subregion-name">Subregion Name</h2>
+  </header>
+
+  <div id="timestamp">
+    <span id="time-title"><%= t('time') %></span>
+    <span id="time-value">
+      <% time = Time.at(@facade.timestamp) %>
+      <% require "pry"; binding.pry %>
+      <%= time.strftime('%H:%M') %>
+    </span>
+  </div>
+
+  <section id="surf-information">
+    <div class="information-card" id="conditions-container">
+      <h3 class="card-title"><%= t('conditions') %></h3>
+      Temperature: <%= @facade.conditions[:temperature] %> <%= @facade.conditions[:unit] %>
+      Pressure: <%= @facade.conditions[:pressure] %>
+    </div>
+    <div class="information-card" id="waves-container">
+      <h3 class="card-title"><%= t('waves') %></h3>
+
+    </div>
+    <div class="information-card" id="wind-container">
+      <h3 class="card-title"><%= t('wind') %></h3>
+      Wind Speed: <%= @facade.wind[:speed] %>
+
+    </div>
+  </section>
+</body>
+
+
+
+
+
+
+
 </br>
 Hello: <%= t('hello') %>

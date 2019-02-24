@@ -1,3 +1,51 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary: #36BCBC;
+$secondary: #086788;
+$text: #20252B;
+$information: #061330;
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#location-container{
+  text-align: center;
+}
+
+#location-name{
+  color: $primary;
+}
+
+#subregion-name{
+  color: $secondary;
+}
+
+#timestamp{
+  text-align: center;
+}
+
+#surf-information{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "conditions waves wind"
+}
+
+.card-title{
+  text-align: center;
+}
+
+#conditions-container{
+  grid-area: conditions;
+}
+
+#waves-container{
+  grid-area: waves;
+}
+
+#wind-container{
+  grid-area: wind;
+}
