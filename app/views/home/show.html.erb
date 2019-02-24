@@ -10,7 +10,6 @@
     <span id="time-title"><%= t('time') %></span>
     <span id="time-value">
       <% time = Time.at(@facade.timestamp) %>
-      <% require "pry"; binding.pry %>
       <%= time.strftime('%H:%M') %>
     </span>
   </div>
