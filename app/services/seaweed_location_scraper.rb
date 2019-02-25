@@ -1,9 +1,5 @@
 class SeaweedLocationScraper
 
-  def initialize
-
-  end
-
   def process_into_json
     data = []
     (1..4880).each do |index|
