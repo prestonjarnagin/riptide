@@ -1,7 +1,7 @@
 class SeaweedLocationScraper
 
   def initialize
-    
+
   end
 
   def process_into_json
@@ -18,11 +18,15 @@ class SeaweedLocationScraper
   def read_from_json
     json = JSON.parse(File.read("./app/assets/documents/surf_locations.json"))
     json.each do |item|
-      id = item.keys[0]
-      name = item.values[0]['location']
-      region = item.values[0]['region']
-      Location.create!(id: id, name: name, region: region)
-      p item
+      begin
+        id = item.keys[0]
+        name = item.values[0]['location']
+        region = item.values[0]['region']
+        Location.create!(id: id, name: name, region: region)
+        p itemp
+      rescue
+        p "error"
+      end
     end
   end
 
