@@ -7,13 +7,11 @@ RSpec.describe SeaweedDataScraper do
   end
 
   it 'retrieves data' do
-    s = SeaweedDataScraper.new()
     id = Location.first.id
 
-    response = s.get_or_create_document(id)
+    response = described_class.get_or_create_document(id)
 
     expect(response).to be_kind_of(String)
-    require "pry"; binding.pry
     expect(response).to include("Surf Report")
   end
 

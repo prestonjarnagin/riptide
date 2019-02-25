@@ -4,7 +4,7 @@ class SeaweedDataScraper
   # The class assumes the database is already populated with accurate location
   # id's and location names
 
-  def get_or_create_document(id)
+  def self.get_or_create_document(id)
     if $redis.get(id)
       return $redis.get(id)
     else
@@ -14,7 +14,9 @@ class SeaweedDataScraper
     end
   end
 
-  def conn(id)
+  private
+
+  def self.conn(id)
     root = "https://magicseaweed.com"
     location_name = Location.find(id).name.titleize.gsub(' - ', ' ')
     location_name = location_name.gsub(' ', '-')
