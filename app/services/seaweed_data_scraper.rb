@@ -10,6 +10,7 @@ class SeaweedDataScraper
     else
       document = conn(id).body
       $redis.set(id, document)
+      return document
     end
   end
 
@@ -17,7 +18,7 @@ class SeaweedDataScraper
     root = "https://magicseaweed.com"
     location_name = Location.find(id).name.titleize.gsub(' - ', ' ')
     location_name = location_name.gsub(' ', '-')
-    url = "#{root}/#{location_name}-Surf-Report/3/"
+    url = "#{root}/#{location_name}-Surf-Report/#{id}/"
     Faraday.get(url)
   end
 end
