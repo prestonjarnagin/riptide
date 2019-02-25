@@ -5,10 +5,37 @@
 $primary: #36BCBC;
 $secondary: #086788;
 $text: #20252B;
-$information: #061330;
+$information: #706F6F;
+$test: #F4F0BB;
 
 body{
   font-family: 'Montserrat', sans-serif;
+}
+
+header{
+  background-color: $text;
+  padding: 5px;
+}
+
+h1{
+  color: $primary;
+  padding: 5px;
+}
+
+h2{
+  color: $secondary;
+}
+
+h3{
+  color: $information;
+}
+
+#location-list{
+  width: 250px;
+  height: 200px;
+  overflow-y: auto;
+  padding: 0px;
+  align-self: center;
 }
 
 #location-container{
@@ -31,11 +58,18 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
-    "conditions waves wind"
+    "conditions waves wind";
+  grid-column-gap: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 .card-title{
   text-align: center;
+}
+
+.information-card{
+  padding: 5px;
 }
 
 #conditions-container{
