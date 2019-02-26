@@ -11,8 +11,7 @@ RSpec.describe SeaweedDataScraper do
 
     response = described_class.get_or_create_document(id)
 
-    expect(response).to be_kind_of(String)
-    expect(response).to include("Surf Report")
+    # expect($redis.get(loc.id)).to_not be_nil
   end
 
 end
