@@ -39,7 +39,7 @@
   <body>
 
     <div id="timestamp">
-      <span id="time-title"><%= t('time') %></span>
+      <span id="time-title"><%= t('updated_at') %></span>
       <span id="time-value">
         <% time = Time.at(@facade.timestamp) %>
         <%= time.strftime('%H:%M') %>
