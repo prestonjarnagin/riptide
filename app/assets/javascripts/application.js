@@ -14,21 +14,38 @@
 //= require_tree .
 
 function locationSearch(){
-  var input, filter, ul, li, a, i, txtValue;
 
-  input = document.getElementById('location-search-input');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
+}
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
+function updateInfo(id){
+  fetch(`/update?id=${id}`)
+  .then(response => response.json())
+  .then(function(data){
+    attrs = data['data']['attributes']
+    timestamp = attrs["timestamp"]
+    conditions = attrs["conditions"]
+    waves = attrs["swell"]
+    wind = attrs["wind"]
+    debugger;
+
+    updateTimestamp(timestamp)
+    updateConditions(conditions)
+    updateWaves(waves)
+    updateWind(wind)
+  })
+  .catch(error => console.error(error))
+}
+
+function updateTimestamp(unixTimestamp){
+  date = new Date(unixTimestamp*1000)
+  debugger;
+}
+function updateConditions(conditionsData){
+
+}
+function updateWaves(waveData){
+
+}
+function updateWind(windData){
+
 }
