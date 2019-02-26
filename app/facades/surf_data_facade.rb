@@ -1,4 +1,18 @@
 class SurfDataFacade
+  attr_reader :id
+
+  def initialize(id)
+    @id = id
+    @_data
+  end
+
+  def location_name
+    Location.find(@id).name
+  end
+
+  def region_name
+    Location.find(@id).region
+  end
 
   def timestamp
     data[:timestamp]
@@ -20,14 +34,18 @@ class SurfDataFacade
     data[:swell]
   end
 
+  def locations
+    Location.all.order(:region)
+  end
+
   private
 
   def data
-    service.get_json
+    @_data ||= service.json(@id)
   end
 
   def service
-    SeaweedService.new
+    SeaweedDataScraper
   end
 
 end
