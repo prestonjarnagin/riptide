@@ -26,13 +26,12 @@
             <% id = location.id %>
               <a class="dropdown-item" href="#" onclick="updateInfo(<%= id %>)"><%= region %> - <%= name %></a>
             <% end %>
-            <h6 class="dropdown-header">Subregion 1</h6>
         </div>
 
     </div>
     <div id="location-container">
-      <h1 id="location-name">Location Name</h1>
-      <h2 id="subregion-name">Subregion Name</h2>
+      <h1 id="location-name"><%# @facade.locations.first.name %></h1>
+      <h2 id="subregion-name"><%# @facade.locations.first.region %></h2>
     </div>
   </header>
 
@@ -41,33 +40,55 @@
     <div id="timestamp">
       <span id="time-title"><%= t('updated_at') %></span>
       <span id="time-value">
-        <% time = Time.at(@facade.timestamp) %>
-        <%= time.strftime('%H:%M') %>
+        <%# time = Time.at(@facade.timestamp) %>
+        <%# time.strftime('%H:%M') %>
       </span>
     </div>
 
     <section id="surf-information">
       <div class="information-card border border-dark rounded" id="conditions-container">
         <h3 class="card-title"><%= t('conditions') %></h3>
-        Temperature: <%= @facade.conditions[:temperature] %> <%= @facade.conditions[:unit] %>
+
+        Temperature:
+        <span id="temp">
+          <%# @facade.conditions[:temperature] %> <%# @facade.conditions[:unit] %>
+        </span>
         <br>
-        Pressure: <%= @facade.conditions[:pressure] %>
+        Pressure:
+        <span id="pressure">
+          <%# @facade.conditions[:pressure] %>
+        </span>
       </div>
       <div class="information-card border border-dark rounded" id="waves-container">
         <h3 class="card-title"><%= t('waves') %></h3>
         <% units = @facade.swell[:unit] %>
-        Min Breaking Height: <%= @facade.swell[:minBreakingHeight] %> <%= units %>
+        Min Breaking Height:
+        <span id="min-breaking-height">
+          <%# @facade.swell[:minBreakingHeight] %> <%# units %>
+        </span>
         <br>
-        Max Breaking Height: <%= @facade.swell[:maxBreakingHeight] %> <%= units %>
+        Max Breaking Height:
+        <span id="max-breaking-height">
+          <%# @facade.swell[:maxBreakingHeight] %> <%# units %>
+        </span>
       </div>
       <div class="information-card border border-dark rounded" id="wind-container">
         <h3 class="card-title"><%= t('wind') %></h3>
         <% units = @facade.wind[:unit] %>
-        Wind Speed: <%= @facade.wind[:speed] %> <%= units %>
+        Wind Speed:
+        <span id="wind-speed">
+          <%# @facade.wind[:speed] %> <%# units %>
+        </span>
         <br>
-        Direction: <%= @facade.wind[:direction] %>
+        Direction:
+        <span id="direction">
+          <%# @facade.wind[:direction] %>
+        </span>
         <br>
-        Wind Chill: <%= @facade.wind[:chill] %>
+        Wind Chill:
+        <span id="wind-chill">
+          <%# @facade.wind[:chill] %>
+        </span>
 
       </div>
     </section>
