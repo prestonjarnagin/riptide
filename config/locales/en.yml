@@ -35,4 +35,4 @@ en:
   conditions: "Conditions"
   waves: "Waves"
   wind: "Wind"
-  time: "Time"
+  updated_at: "Updated At"
