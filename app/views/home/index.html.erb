@@ -1,0 +1,83 @@
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <h1>Riptide</h1>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Locations
+        </a>
+
+        <div class="dropdown-menu">
+          <form class="px-4 py-3">
+
+            <div class="form-group">
+              <label for="search-input">Search Locations</label>
+              <input type="text" class="form-control" id="search-input" placeholder="Location Name">
+            </div>
+          </form>
+
+          <div class="dropdown-divider"></div>
+          <div id="location-list">
+            <% @facade.locations.each do |location| %>
+            <% name = location.name %>
+            <% region = location.region %>
+            <% id = location.id %>
+              <a class="dropdown-item" href="#" onclick="updateInfo(<%= id %>)"><%= region %> - <%= name %></a>
+            <% end %>
+            <h6 class="dropdown-header">Subregion 1</h6>
+        </div>
+
+    </div>
+    <div id="location-container">
+      <h1 id="location-name">Location Name</h1>
+      <h2 id="subregion-name">Subregion Name</h2>
+    </div>
+  </header>
+
+  <body>
+
+    <div id="timestamp">
+      <span id="time-title"><%= t('time') %></span>
+      <span id="time-value">
+        <% time = Time.at(@facade.timestamp) %>
+        <%= time.strftime('%H:%M') %>
+      </span>
+    </div>
+
+    <section id="surf-information">
+      <div class="information-card border border-dark rounded" id="conditions-container">
+        <h3 class="card-title"><%= t('conditions') %></h3>
+        Temperature: <%= @facade.conditions[:temperature] %> <%= @facade.conditions[:unit] %>
+        <br>
+        Pressure: <%= @facade.conditions[:pressure] %>
+      </div>
+      <div class="information-card border border-dark rounded" id="waves-container">
+        <h3 class="card-title"><%= t('waves') %></h3>
+        <% units = @facade.swell[:unit] %>
+        Min Breaking Height: <%= @facade.swell[:minBreakingHeight] %> <%= units %>
+        <br>
+        Max Breaking Height: <%= @facade.swell[:maxBreakingHeight] %> <%= units %>
+      </div>
+      <div class="information-card border border-dark rounded" id="wind-container">
+        <h3 class="card-title"><%= t('wind') %></h3>
+        <% units = @facade.wind[:unit] %>
+        Wind Speed: <%= @facade.wind[:speed] %> <%= units %>
+        <br>
+        Direction: <%= @facade.wind[:direction] %>
+        <br>
+        Wind Chill: <%= @facade.wind[:chill] %>
+
+      </div>
+    </section>
+  </body>
+
+
+
+
+
+
+
+</br>
+Hello: <%= t('hello') %>
