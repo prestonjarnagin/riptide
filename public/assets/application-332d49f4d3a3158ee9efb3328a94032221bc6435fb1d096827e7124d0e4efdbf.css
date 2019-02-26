@@ -1,0 +1,106 @@
+/* line 11, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* line 15, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+header {
+  background-color: #20252B;
+  padding: 5px;
+}
+
+/* line 20, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+h1 {
+  color: #36BCBC;
+  padding: 5px;
+}
+
+/* line 25, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+h2 {
+  color: #086788;
+}
+
+/* line 29, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+h3 {
+  color: #706F6F;
+}
+
+/* line 33, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#location-list {
+  width: 250px;
+  height: 200px;
+  overflow-y: auto;
+  padding: 0px;
+  align-self: center;
+}
+
+/* line 41, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#location-container {
+  text-align: center;
+}
+
+/* line 45, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#location-name {
+  color: #36BCBC;
+}
+
+/* line 49, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#subregion-name {
+  color: #086788;
+}
+
+/* line 53, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#timestamp {
+  text-align: center;
+}
+
+/* line 57, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#surf-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "conditions waves wind";
+  grid-column-gap: 1vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+/* line 67, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+.card-title {
+  text-align: center;
+}
+
+/* line 71, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+.information-card {
+  padding: 5px;
+}
+
+/* line 75, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#conditions-container {
+  grid-area: conditions;
+}
+
+/* line 79, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#waves-container {
+  grid-area: waves;
+}
+
+/* line 83, /Users/prestonjarnagin/turing/4module/projects/riptide/app/assets/stylesheets/home.scss */
+#wind-container {
+  grid-area: wind;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
