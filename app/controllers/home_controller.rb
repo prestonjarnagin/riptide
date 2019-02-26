@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   def show
-    @facade = SurfDataFacade.new
+  def index
+    @facade = SurfDataFacade.new(1)
   end
 
 end
