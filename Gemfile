@@ -48,6 +48,7 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'vcr'
 end
 
 group :development do
