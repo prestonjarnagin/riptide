@@ -4,14 +4,20 @@ class SeaweedDataScraper
   # The class assumes the database is already populated with accurate location
   # id's and location names
 
+  def self.json(id)
+    body = self.get_or_create_document(id)
+    nk = Nokogiri::HTML(body)
+    JSON.parse(nk.css('div.msw-js-current-conditions')[0].values[1], symbolize_names: true)
+  end
+
   def self.get_or_create_document(id)
-    if $redis.get(id)
-      return $redis.get(id)
-    else
+    # if $redis.get(id)
+    #   return $redis.get(id)
+    # else
       document = conn(id).body
-      $redis.set(id, document)
+      # $redis.set(id, document)
       return document
-    end
+    # end
   end
 
   private
