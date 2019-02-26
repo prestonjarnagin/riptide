@@ -14,15 +14,6 @@ RSpec.describe SeaweedDataScraper do
       expect(response).to include("Surf Report")
   end
 
-  it 'stores data in redis' do
-    loc = Location.create(id: 1, name: "Newquay - Fistral North", region: "UK + Ireland")
-    # $redis.del(loc.id)
-
-    described_class.get_or_create_document(loc.id)
-
-    # expect($redis.get(loc.id)).to_not be_nil
-  end
-
   it 'returns a hash with information' do
     loc = Location.create(id: 1, name: "Newquay - Fistral North", region: "UK + Ireland")
     # $redis.del(loc.id)
