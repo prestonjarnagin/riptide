@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
 
-  get '/', to: "home#show"
-
+  get '/', to: "home#index"
+  get '/update', to: "home#show"
 end
