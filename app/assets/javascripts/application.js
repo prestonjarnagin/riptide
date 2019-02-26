@@ -38,7 +38,7 @@ function updateInfo(id){
 
 function updateTimestamp(unixTimestamp){
   date = new Date(unixTimestamp*1000)
-  debugger;
+  document.getElementById('time-value').innerHTML = (date)
 }
 function updateConditions(conditionsData){
 
