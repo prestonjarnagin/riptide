@@ -6,6 +6,8 @@ Data about current conditions and the list of locations is web-scraped from [Mag
 
 A live version of this app can be found at https://riptide-0.herokuapp.com/
 
+Static text in the application is locallized to English, Spanish, and Piglatin. Add `?locale=` and either `en`, `es`, or `piglatin` to access the localized versions
+
 #### Setup
 - Clone down this repo
 - Run `$ rake db:{create,migrate,seed}`
