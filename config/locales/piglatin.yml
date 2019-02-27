@@ -1,8 +1,19 @@
 piglatin:
-  hello: "ellohay"
+  hello: ellohay
 
-  conditions: "onditionscay"
-  waves: "indway"
-  wind: "avesway"
-  time: "imetay"
-  updated_at: "updatedyay atyay"
+  conditions: onditionscay
+  waves: indway
+  wind: avesway
+  time: imetay
+  updated_at: updatedyay atyay
+  locations: ocationslay
+  search: earchsay
+  location-name: ocationlay name
+
+  temperature: emperaturetay
+  pressure: essurepray
+  min-breaking-height: inmay eakingbray eighthay
+  max-breaking-height: axmay eakingbray eighthay
+  wind-speed: indway eedspay
+  direction: irectionday
+  wind-chill: indway illchay

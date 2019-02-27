@@ -30,9 +30,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello"
+  hello: Hello
 
-  conditions: "Conditions"
-  waves: "Waves"
-  wind: "Wind"
-  updated_at: "Updated At"
+  conditions: Conditions
+  waves: Waves
+  wind: Wind
+  updated_at: Updated At
+  locations: Locations
+  search: Search
+  location-name: Location Name
+
+  temperature: Temperature
+  pressure: Pressure
+  min-breaking-height: Min Breaking Height
+  max-breaking-height: Max Breaking Height
+
+  wind-speed: Wind Speed
+  direction: Direction
+  wind-chill: Wind Chill

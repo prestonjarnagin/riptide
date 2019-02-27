@@ -6,15 +6,15 @@
 
       <div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Locations
+          <%= t('locations') %>
         </a>
 
         <div class="dropdown-menu">
           <form class="px-4 py-3">
 
             <div class="form-group">
-              <label for="search-input">Search Locations</label>
-              <input type="text" class="form-control" id="search-input" placeholder="Location Name">
+              <label for="search-input"><%= t("search") %> <%= t("locations") %></label>
+              <input type="text" class="form-control" id="search-input" placeholder="<%= t('location-name') %>">
             </div>
           </form>
 
@@ -49,12 +49,12 @@
       <div class="information-card border border-dark rounded" id="conditions-container">
         <h3 class="card-title"><%= t('conditions') %></h3>
 
-        Temperature:
+        <%= t('temperature') %>
         <span id="temp">
           <%# @facade.conditions[:temperature] %> <%# @facade.conditions[:unit] %>
         </span>
         <br>
-        Pressure:
+        <%= t('pressure') %>
         <span id="pressure">
           <%# @facade.conditions[:pressure] %>
         </span>
@@ -62,12 +62,12 @@
       <div class="information-card border border-dark rounded" id="waves-container">
         <h3 class="card-title"><%= t('waves') %></h3>
         <% units = @facade.swell[:unit] %>
-        Min Breaking Height:
+        <%= t('min-breaking-height') %>
         <span id="min-breaking-height">
           <%# @facade.swell[:minBreakingHeight] %> <%# units %>
         </span>
         <br>
-        Max Breaking Height:
+        <%= t('max-breaking-height') %>
         <span id="max-breaking-height">
           <%# @facade.swell[:maxBreakingHeight] %> <%# units %>
         </span>
@@ -75,17 +75,18 @@
       <div class="information-card border border-dark rounded" id="wind-container">
         <h3 class="card-title"><%= t('wind') %></h3>
         <% units = @facade.wind[:unit] %>
-        Wind Speed:
+        <%= t('wind-speed') %>
         <span id="wind-speed">
           <%# @facade.wind[:speed] %> <%# units %>
         </span>
         <br>
-        Direction:
+        <%= t('direction') %>
+
         <span id="direction">
           <%# @facade.wind[:direction] %>
         </span>
         <br>
-        Wind Chill:
+        <%= t('wind-chill') %>
         <span id="wind-chill">
           <%# @facade.wind[:chill] %>
         </span>
