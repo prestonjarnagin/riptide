@@ -13,6 +13,6 @@ RSpec.feature "Home Page", type: :feature do
     Location.create(id: 1, name: "Newquay - Fistral North", region: "UK + Ireland")
 
     visit '/'
-    expect(page).to have_content('Wind Speed:')
+    expect(page).to have_content('Wind Speed')
   end
 end
