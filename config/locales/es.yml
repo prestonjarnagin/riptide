@@ -1,0 +1,19 @@
+es:
+  hello: Hola
+
+  conditions: Condiciones
+  waves: Olas
+  wind: Viento
+  updated_at: Actualizado en
+  locations: Ubicaciones
+  search: Buscar
+  location-name: Nombre del lugar
+
+  temperature: Temperatura
+  pressure: Presión
+  min-breaking-height: Altura mínima de rotura
+  max-breaking-height: Altura máxima de ruptura
+
+  wind-speed: Velocidad del viento
+  direction: Dirección
+  wind-chill: Escalofríos
