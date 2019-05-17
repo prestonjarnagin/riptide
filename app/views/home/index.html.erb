@@ -12,53 +12,8 @@
         <%# time.strftime('%H:%M') %>
       </span>
     </div>
+  <section id="infopane">
+    <%= render partial: 'infopane' %>
+  </section>
 
-    <section id="surf-information">
-      <div class="information-card border border-dark rounded" id="conditions-container">
-        <h3 class="card-title"><%= t('conditions') %></h3>
-
-        <%= t('temperature') %>
-        <span id="temp">
-          <%# @facade.conditions[:temperature] %> <%# @facade.conditions[:unit] %>
-        </span>
-        <br>
-        <%= t('pressure') %>
-        <span id="pressure">
-          <%# @facade.conditions[:pressure] %>
-        </span>
-      </div>
-      <div class="information-card border border-dark rounded" id="waves-container">
-        <h3 class="card-title"><%= t('waves') %></h3>
-        <% units = @facade.swell[:unit] %>
-        <%= t('min-breaking-height') %>
-        <span id="min-breaking-height">
-          <%# @facade.swell[:minBreakingHeight] %> <%# units %>
-        </span>
-        <br>
-        <%= t('max-breaking-height') %>
-        <span id="max-breaking-height">
-          <%# @facade.swell[:maxBreakingHeight] %> <%# units %>
-        </span>
-      </div>
-      <div class="information-card border border-dark rounded" id="wind-container">
-        <h3 class="card-title"><%= t('wind') %></h3>
-        <% units = @facade.wind[:unit] %>
-        <%= t('wind-speed') %>
-        <span id="wind-speed">
-          <%# @facade.wind[:speed] %> <%# units %>
-        </span>
-        <br>
-        <%= t('direction') %>
-
-        <span id="direction">
-          <%# @facade.wind[:direction] %>
-        </span>
-        <br>
-        <%= t('wind-chill') %>
-        <span id="wind-chill">
-          <%# @facade.wind[:chill] %>
-        </span>
-
-      </div>
-    </section>
-  </body>
+</body>
