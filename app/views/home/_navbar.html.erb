@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg justify-content-between">
+  <h1>Riptide</h1>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= t('locations') %>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+      <form class="px-4 py-3">
+        <div class="form-group">
+          <input type="text" class="form-control" id="location-search-input" placeholder="Search" action="" onkeyup="filterLocations()">
+        </div>
+      </form>
+
+      <div id='locations-list'>
+      <%@facade.locations.each do |loc| %>
+        <% name = loc.name %>
+        <% region = loc.region %>
+        <% id = loc.id %>
+        <button class="dropdown-item location-selector" type="button" onclick="updateInfo(<%= id %>)">
+          <%= region %> - <%= name %>
+        </button>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div id="location-container">
+    <h2 id="location-name"><%= @facade.locations.first.name %></h2>
+    <h2 id="subregion-name"><%= @facade.locations.first.region %></h2>
+  </div>
+</nav>
