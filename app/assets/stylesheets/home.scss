@@ -29,16 +29,16 @@ h3{
   color: $information;
 }
 
-#location-list{
-  width: 250px;
-  height: 200px;
+#locations-list{
+  width: 300px;
+  height: 300px;
   overflow-y: auto;
   padding: 0px;
   align-self: center;
 }
 
 #location-container{
-  text-align: center;
+  text-align: right;
 }
 
 #location-name{
@@ -53,7 +53,7 @@ h3{
   text-align: center;
 }
 
-#surf-information{
+#infopane{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
@@ -61,14 +61,6 @@ h3{
   grid-column-gap: 1vw;
   margin-left: 1vw;
   margin-right: 1vw;
-}
-
-.card-title{
-  text-align: center;
-}
-
-.information-card{
-  padding: 5px;
 }
 
 #conditions-container{
@@ -81,4 +73,17 @@ h3{
 
 #wind-container{
   grid-area: wind;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.information-card{
+  padding: 5px;
+}
+
+.location-selector{
+  white-space: normal;
+  word-wrap: break-word;
 }
