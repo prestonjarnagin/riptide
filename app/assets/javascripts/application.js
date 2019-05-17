@@ -43,7 +43,9 @@ function updateLocationLabel(locationName, regionName){
 
 function updateTimestamp(unixTimestamp){
   date = new Date(unixTimestamp*1000)
-  document.getElementById('time-value').innerHTML = (date)
+  hours = date.getHours();
+  minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  document.getElementById('time-value').innerHTML = `${hours}:${minutes} GMT`
 }
 function updateConditions(conditionsData){
   document.getElementById('temp').innerHTML = conditionsData["temperature"]
@@ -58,4 +60,39 @@ function updateWind(windData){
   document.getElementById('wind-speed').innerHTML = windData["speed"]
   document.getElementById('direction').innerHTML = windData["direction"]
   document.getElementById('wind-chill').innerHTML = windData["chill"]
+}
+
+function filterLocations(){
+  input = document.getElementById('location-search-input')
+  searchTerm = input.value.toUpperCase()
+  if(searchTerm.length == 0){
+    resetResults();
+    return;
+  }
+  if(searchTerm.length < 3){
+    return;
+  }
+  location_list = document.getElementById('locations-list')
+  locations = location_list.getElementsByTagName('button');
+
+  for (i = 0; i < locations.length; i++) {
+    loc = locations[i]
+    loc_name = loc.innerText;
+    if (loc_name.toUpperCase().indexOf(searchTerm) > -1) {
+      locations[i].style.display = "";
+    } else {
+      locations[i].style.display = "none";
+    }
+  }
+}
+
+function resetResults(){
+  location_list = document.getElementById('locations-list')
+  locations = location_list.getElementsByTagName('button');
+
+  for (i = 0; i < locations.length; i++) {
+    loc = locations[i]
+    loc_name = loc.innerText;
+    locations[i].style.display = "";
+  }
 }
