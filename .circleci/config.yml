@@ -21,10 +21,8 @@ jobs: # a collection of steps
 
       # Which version of bundler?
       - run:
-          name: Which bundler?
+          name: Update bundler
           command: gem install bundle -v 2.0.1
-          command: bundle -v
-
 
       # Restore bundle cache
       # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
